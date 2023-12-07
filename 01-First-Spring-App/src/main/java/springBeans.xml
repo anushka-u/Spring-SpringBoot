@@ -10,7 +10,11 @@
 	<bean id="upi" class="com.learn.UPIPayment" />
 
 	<bean id="billCollector" class="com.learn.BillCollector">
-		<property name="payment" ref="debitCard"/>
-	</bean>
-
+	<!-- To perform setter injection we will use property tag like below -->
+		<property name="payment" ref = "creditCard"/>
+	
+	<!-- To perform Constructor Injection we will use constructor-arg tag like below -->
+		<constructor-arg name="payment" ref="upi" />
+    </bean>
+	
 </beans>
