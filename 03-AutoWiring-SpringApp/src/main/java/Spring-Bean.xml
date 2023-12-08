@@ -6,8 +6,11 @@
 <!-- If our scope is prototype then only when will call getBean() object will be created
 if our scope is singleton then by default objects will be created when IOC container starts -->
 
-<bean id = "dieselEng" class = "com.learn.DieselEngine"/>
-<bean id = "car" class = "com.learn.Car" autowire="byName"/>
+<bean id = "abc" class = "com.learn.DieselEngine"/>
+<!-- Autowiring using byName -->
+<!-- <bean id="car" class="com.learn.DieselEngine" autowire="byName"/> -->
+<!--  Autowiring using byType-->
+<bean id = "car" class = "com.learn.Car" autowire="byType"/>
 	
 
 
