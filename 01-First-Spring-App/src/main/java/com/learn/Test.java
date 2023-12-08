@@ -1,7 +1,5 @@
 package com.learn;
  
-import java.beans.beancontext.BeanContext;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Test {
