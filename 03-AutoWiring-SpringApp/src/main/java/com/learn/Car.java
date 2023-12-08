@@ -8,12 +8,19 @@ public class Car {
 	
 	public void setDieselEng(DieselEngine dieselEng)
 	{
+		System.out.println("setDieselEngine() method executed");
 		this.dieselEng = dieselEng;
 	}
 	
-	
-	public Car() {
+	public Car()
+	{
 		System.out.println("Car :: Constructor");
+	}
+	
+	public Car(DieselEngine dieselEng)
+	{
+		System.out.println("Car::Param Constructor");
+		this.dieselEng = dieselEng;
 	}
 	
 	public void drive() {
