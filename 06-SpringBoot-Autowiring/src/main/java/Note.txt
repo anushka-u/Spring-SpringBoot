@@ -1,0 +1,18 @@
+ There are three modes of AutoWiring
+ 1- ByType : It is by default mechanism, when only one class implements our interface 
+ then our IOC container does ByType Autowiring.
+ 
+ But when our Interface is implemented by more than one class, ambiguity will arise and our application will
+ fail {byType}
+ 
+ 2- ByName: We use @Qualifier annotation to perform byName autowiring
+ To do byName autowiring first we need to give a name to all classess implementing the interface, which can be done by below
+ @Repository("<Name>"), at place of name you can use any name you want
+and we will use @Qualifier("<Name>") annotation from where we want IOC container to call that class and perform DI
+
+3- If we don't want to go with byName and byType we can use @Primary annotation in the class whom we want to be autowired, so that bean will be injected
+
+4- In Constructor Injection, @Autowired  annotation is optional if we have only one param constructor present in our spring bean class
+but in another scenario if we will have zero param and param constructor in our spring bean class, using @Autowired annotation with param conbstructor is mandatory
+because our IOC container will prioritize zero parma constructor over param constructor, In this scenario we will be getting null pointer exception, so to avoid this scenarion either keep only one constructor (parameterized) in spring bean class
+or if you have both zero and param constructor, do use @Autowired annotation to do constructor injection 
