@@ -13,6 +13,7 @@ import lombok.ToString;
 @Table(name = "USER_MASTER")
 //when we use @data annotation we don't need to write getter and setter
 @Data 
+@ToString
 public class User {
 	
 	@Id
