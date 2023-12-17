@@ -18,4 +18,6 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 	public List<User> findByAgeIsBetween(Integer i, Integer j);
 	
 	public List<User> findByCountryAndAge(String country, Integer age);
+	
+	public List<User> findByCountryAndAgeAndGender(String country, Integer age, String gender);
 }

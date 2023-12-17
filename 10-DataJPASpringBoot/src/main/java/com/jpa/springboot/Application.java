@@ -49,6 +49,10 @@ public class Application {
 		//To retrieve those users who are from the country passed in parameter and in age of parameter
 		List<User> findbycountryandfindbyage = repository.findByCountryAndAge("India",21);
 		findbycountryandfindbyage.forEach(user -> System.out.println(user));
+		
+		//To retieve users whose country,age and gender matches with parameters
+		List<User> findbycag = repository.findByCountryAndAgeAndGender("India", 19, "Male");
+		findbycag.forEach(user -> System.out.println(user));
 	}
 
 }
