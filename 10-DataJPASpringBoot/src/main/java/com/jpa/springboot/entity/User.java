@@ -12,7 +12,9 @@ import lombok.ToString;
 @Entity
 @Table(name = "USER_MASTER")
 //when we use @data annotation we don't need to write getter and setter
-@Data 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString
 public class User {
 	
@@ -32,18 +34,25 @@ public class User {
 	@Column(name = "COUNTRY")
 	private String country;
 	
-	public User() {
-		
-	}
-	
-	public User(Integer userId, String userName, String gender, Integer age, String country) {
-		super();
-		this.userId = userId;
-		this.userName = userName;
-		this.gender = gender;
-		this.age = age;
-		this.country = country;
-	}
+//	public User() {
+//		
+//	}
+//	
+//	public User(Integer userId, String userName, String gender, Integer age, String country) {
+//		super();
+//		this.userId = userId;
+//		this.userName = userName;
+//		this.gender = gender;
+//		this.age = age;
+//		this.country = country;
+//	}
+//	
+//	public String ToString()
+//	{
+//		return "UserId: " + this.userId  + " User Name: " + this.userName +
+//				" Gender: "+ this.gender + " Age: " + this.age + " Country: "+this.country;
+//		
+//	}
 
 	
 }
