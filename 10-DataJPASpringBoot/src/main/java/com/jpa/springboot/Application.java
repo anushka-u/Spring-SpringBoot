@@ -18,23 +18,37 @@ public class Application {
 		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
 		UserRepository repository = context.getBean(UserRepository.class);
 	
-		User u1 = new User(1,"Ram","Male",19,"India");
+		User u1 = new User(1,"Ram","Male",18,"India");
 		User u2 = new User(2,"Ramya","Female",19,"India");
-		User u3 = new User(3,"Ramu","Male",19,"India");
+		User u3 = new User(3,"Ramu","Male",21,"India");
 		User u4 = new User(4,"Ramakant","Male",19,"India");
 		
-		repository.saveAll(Arrays.asList(u2,u3,u4));
+		repository.saveAll(Arrays.asList(u1,u2,u3,u4));
 		
-		//Optional<User> findById = repository.findById(1);
+		Optional<User> findById = repository.findById(1);
 		Iterable<User> findAllById = repository.findAllById(Arrays.asList(1,2,3,4));
 		findAllById.forEach(user->
 		System.out.println(user));
 		
-		
+		//To retrieve those user who are from USA.
 		List<User> findbycountry = repository.findByCountry("USA");
-		
 		findbycountry.forEach(user -> System.out.println(user));
 		
+		//To retrieve users whose age is 19
+		List<User> findbyage =  repository.findByAge(19);
+		findbyage.forEach(user -> System.out.println(user));
+		
+		//To retrieve users whose age are greater than value passes in parameter
+		List<User>  findbyagegreaterorequal =  repository.findByAgeGreaterThanEqual(20);
+		findbyagegreaterorequal.forEach(user -> System.out.println(user));
+		
+		//To retrieve those users whose age lie in between integer i and integer j
+		List<User> findbyageinbetweenList =  repository.findByAgeIsBetween(18, 20);
+		findbyageinbetweenList.forEach(user -> System.out.println(user));
+		
+		//To retrieve those users who are from the country passed in parameter and in age of parameter
+		List<User> findbycountryandfindbyage = repository.findByCountryAndAge("India",21);
+		findbycountryandfindbyage.forEach(user -> System.out.println(user));
 	}
 
 }
