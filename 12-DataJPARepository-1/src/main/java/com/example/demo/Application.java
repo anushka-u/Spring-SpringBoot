@@ -44,12 +44,19 @@ System.out.println("________________________________________________________");
 		users = repository.findAll(Sort.by("userName"));
 		users.forEach(user -> System.out.println(user));
 		
+		int pageSize = 3;
+		int pageNumber = 0;
 		//Pagination 
 		System.out.println("________________________PAGINATION____________________________");
-		PageRequest pageRequest = PageRequest.of(0, 3);
+		PageRequest pageRequest = PageRequest.of(pageNumber, pageSize);
 		org.springframework.data.domain.Page<User> pageData = repository.findAll(pageRequest);
+		//Total Pages
+		int totalPage = pageData.getTotalPages();
+		System.out.println("Total Pages :: "+ totalPage);
 		List<User> users2 = pageData.getContent();
 		users2.forEach(user -> System.out.println(user));
+		
+		
 		
 		
 		
