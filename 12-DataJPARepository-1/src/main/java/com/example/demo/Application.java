@@ -8,6 +8,7 @@ import org.hibernate.query.Page;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.data.domain.Example;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
@@ -55,6 +56,18 @@ System.out.println("________________________________________________________");
 		System.out.println("Total Pages :: "+ totalPage);
 		List<User> users2 = pageData.getContent();
 		users2.forEach(user -> System.out.println(user));
+		
+		
+		System.out.println();
+		System.out.println("_________________QUERY BY EXAMPLE________________________________________");
+		//QBE - Query By Example
+		User entityUser = new User();
+		//Optional (set if required)
+		entityUser.setCountry("India");
+		Example<User> example = Example.of(entityUser);
+		List<User> users3 = repository.findAll(example);
+		
+		users3.forEach(user -> System.out.println(user));
 		
 		
 		
