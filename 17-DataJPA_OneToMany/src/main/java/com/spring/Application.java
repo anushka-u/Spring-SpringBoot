@@ -3,6 +3,7 @@ package com.spring;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +17,8 @@ public class Application {
 		EmployeeService service = context.getBean(EmployeeService.class);
 		
 		service.saveData();
+		Optional<Employee> findByIdOptional = service.FindData(1);
+		findByIdOptional.ifPresent(emp->System.out.println(emp));
 		context.close();
 		
 //		Employee e = new Employee();

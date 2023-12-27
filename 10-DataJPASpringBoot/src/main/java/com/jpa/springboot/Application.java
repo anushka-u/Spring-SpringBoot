@@ -25,7 +25,11 @@ public class Application {
 		
 		repository.saveAll(Arrays.asList(u1,u2,u3,u4));
 		
+		System.out.println("_________________________________________________________");
 		Optional<User> findById = repository.findById(1);
+		findById.ifPresent(user->System.out.println(user));
+		
+		System.out.println(" ______________________________________________");
 		Iterable<User> findAllById = repository.findAllById(Arrays.asList(1,2,3,4));
 		findAllById.forEach(user->
 		System.out.println(user));

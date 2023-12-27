@@ -2,6 +2,7 @@ package com.spring;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -16,8 +17,8 @@ public class EmployeeService {
 	
 	public void saveData() {
 		Employee employee = new Employee();
-		employee.setEmpName("kiran");
-		employee.setEmpSalary(25000.00);
+		employee.setEmpName("Kiran");
+		employee.setEmpSalary(55000.00);
 		
 		Address a1= new Address();
 		a1.setCityString("Pune");
@@ -36,7 +37,17 @@ public class EmployeeService {
 		employeeRepository.save(employee);
 	}
 	
+	public void DeleteData(Integer id) {
+		
+		employeeRepository.deleteById(id);
+		
+	}
 	
+	public Optional<Employee> FindData(Integer id) {
+		return employeeRepository.findById(id);
+		
+		
+	}
 	
 	
 }

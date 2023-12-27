@@ -32,6 +32,7 @@ public class Address {
 	private String countryString;
 	
 	@ManyToOne
+	//Foreign key
 	@JoinColumn(name="emp_id")
 	private Employee emp;
 }
