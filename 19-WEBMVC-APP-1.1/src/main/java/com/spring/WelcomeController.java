@@ -11,9 +11,18 @@ public class WelcomeController {
 	public ModelAndView getWelcomeMessage() {
 		ModelAndView modelAndView=new ModelAndView();
 		modelAndView.addObject("msg","Welcome to SpringBoot Page");
-		modelAndView.setViewName("index");
+		modelAndView.setViewName("welcome");
 		return modelAndView;
 		
 	}
-
+	
+	@GetMapping("/greet")
+	public ModelAndView getGreetMessage() {
+		ModelAndView modelAndView= new ModelAndView();
+		modelAndView.addObject("msg","Good Morning!");
+		modelAndView.setViewName("greet");
+		return modelAndView;
+	}
+	
+	
 }

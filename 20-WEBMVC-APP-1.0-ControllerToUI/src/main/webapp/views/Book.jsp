@@ -7,13 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Welcome To AshokIT</h1>
-<a href="welcome">Get Welcome Message</a>
-<br>
-<a href="greet">Get greet Message</a>
-<br>
-<a href="wish">Get Wish Message</a>
-
+<h1>Book Data</h1>
+Book ID : ${Book.bookId}
+Book Name: ${Book.bookName }
+Book Price: ${Book.bookPrice }
 
 </body>
 </html>
