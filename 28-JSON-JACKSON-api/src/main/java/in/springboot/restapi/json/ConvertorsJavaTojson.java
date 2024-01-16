@@ -18,6 +18,8 @@ public class ConvertorsJavaTojson {
 		book.setPrice(459.00);
 		
 		ObjectMapper mapper = new ObjectMapper();
+		
+		//converting java obj to json and store into a file
 		mapper.writeValue(new File("book.json"), book);
 		System.out.println("Conversion Completed......");
 	}
