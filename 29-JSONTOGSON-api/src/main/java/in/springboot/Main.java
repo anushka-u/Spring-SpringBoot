@@ -23,7 +23,7 @@ public class Main {
 		String json= gson.toJson(order);
 		System.out.println(json);
 		
-		gson.fromJson(new FileReader(new File("order.json")), Order.class);
+		//gson.fromJson(new FileReader(new File("order.json")), Order.class);
 		
 	}
 
