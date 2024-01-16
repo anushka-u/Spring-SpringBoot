@@ -18,6 +18,7 @@ public class JsonToJavaConvertor {
 		
 		ObjectMapper mapper = new ObjectMapper();
 		
+		//readValue() is used to convert JSON value into Java object
 		Book book = mapper.readValue(jsonFile, Book.class);
 		
 		System.out.println(book);
