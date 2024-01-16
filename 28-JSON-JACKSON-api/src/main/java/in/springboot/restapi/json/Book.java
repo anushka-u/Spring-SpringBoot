@@ -10,5 +10,7 @@ public class Book {
 	private String name;
 	
 	private Double price;
+	
+	private Author author;
 
 }

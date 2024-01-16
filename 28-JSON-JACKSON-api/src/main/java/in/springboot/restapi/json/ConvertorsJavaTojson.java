@@ -12,10 +12,18 @@ public class ConvertorsJavaTojson {
 	public static void main(String[] args) throws StreamWriteException, DatabindException, IOException {
 		// TODO Auto-generated method stub
 
+		
+		Author author = new Author();
+		author.setAuthorEmail("xyz@gmail.com");
+		author.setAuthorName("xyz");
+		author.setPhNumber((long) 987654329);
+		
+		
 		Book book = new Book();
 		book.setId(101);
 		book.setName("Spring");
 		book.setPrice(459.00);
+		book.setAuthor(author);
 		
 		ObjectMapper mapper = new ObjectMapper();
 		
