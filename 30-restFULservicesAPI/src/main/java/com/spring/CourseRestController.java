@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CourseRestController {
 
+	//Working with 2 QueryParams
 	@GetMapping("/course")
 	public String getCourseFee(String cName, String tName)
 	{
