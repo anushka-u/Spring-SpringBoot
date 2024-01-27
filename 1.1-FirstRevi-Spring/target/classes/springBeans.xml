@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="paymentMode1" class="com.springcontext.PaymentMode1" />
+
+	
+	<bean id="collectBill" class="com.springcontext.CollectBill">
+		
+	<!-- To perform setter injection we will use property tag like below -->
+	<property name="payment" ref = "paymentMode1"/> 
+	
+	<!-- To perform Constructor Injection we will use constructor-arg tag like below 
+		<constructor-arg name="payment" ref="upi" />-->
+    </bean>
+	
+</beans>
