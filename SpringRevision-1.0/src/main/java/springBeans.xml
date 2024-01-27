@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id = "car" class = "com.learn.revision.Car"/>
+	<bean id = "bus" class = "com.learn.revision.Bus"/>
+	<bean id = "carORbus" class = "com.learn.revision.CarOrBus">
+		<!--  <constructor-arg name="engine" ref="car"/> -->
+		<property name="engine" ref="bus"/>
+	</bean>
+	
+</beans>
