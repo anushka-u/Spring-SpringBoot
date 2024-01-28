@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- When we do autowiring byType and want to set value then pass constructor argument in bean engine -->
+   <!--   <bean id="car" class="com.spring.autowiring.Car" autowire="byType"/>-->
+    	
+ <!--       
+ Aurowiring using constructor 
+<bean id="car" class="com.spring.autowiring.Car" autowire="constructor">
+<constructor-arg value="EQ8"/>
+</bean>
+-->  
+
+<!-- Autowiring by name -->
+<bean id="car" class="com.spring.autowiring.Car" autowire="byName"/>
+
+
+    <bean id="engine" class="com.spring.autowiring.Engine">
+    	<constructor-arg value="EQ8"/>
+    </bean>
+</beans>
