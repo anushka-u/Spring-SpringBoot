@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductRestController {
 	
 	@GetMapping("/product")
-	
+	//To return single data
 	public ResponseEntity<Product> getProduct(){
 		Product productObj = new Product();
 		productObj.setPId(101);
@@ -23,7 +23,7 @@ public class ProductRestController {
 		return new ResponseEntity<>(productObj, HttpStatus.OK);
 	}
 	
-	
+	//To return list of data
 	@GetMapping("/products")
 	public ResponseEntity<List<Product>> getProducts(){
 		Product p1 = new Product(100,"Car",200.00);
