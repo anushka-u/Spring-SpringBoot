@@ -74,6 +74,9 @@ public class Application {
 		
 		iterable.forEach(user-> System.out.println(user));
 		
+
+		System.out.println(userRepository.findByNameAndCity("priya", "delhi"));
+		
 		
 	}
 
