@@ -3,6 +3,7 @@ package com.spring;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -11,6 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TicketRestController {
+	
+	@GetMapping("/ticket/ticketId")
+	public ResponseEntity<Ticket> getTicker(@PathVariable("ticketId") Integer ticketId){
+		
+		Ticket ticket = new Ticket();
+		ticket.setTicketId(2313232);
+		ticket.setPnr("12yhjfduykdfdhylsdiu");
+		ticket.setTicketStatus("TICKET CONFIRMED");
+		
+		return new ResponseEntity<>(ticket, HttpStatus.OK);
+	}
 	
 	@PostMapping(
 			value="/ticket",
@@ -26,7 +38,7 @@ public class TicketRestController {
 		ticket.setPnr("12yhjfduykdfdhylsdiu");
 		ticket.setTicketStatus("TICKET CONFIRMED");
 		
-		return new ResponseEntity<>(ticket,HttpStatus.ACCEPTED);
+		return new ResponseEntity<>(ticket,HttpStatus.CREATED);
 	}
 	
 	@PutMapping("/ticket")
