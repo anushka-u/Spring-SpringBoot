@@ -1,0 +1,21 @@
+LogLevel typically refers to an enumeration (enum) that defines the various levels of logging severity.
+These levels help categorize log messages based on their importance or severity, allowing developers and system administrators
+to control the verbosity of logs and filter relevant information during troubleshooting and monitoring.
+
+LEVELS ARE _
+INFO
+WARN
+TRACE
+DEBUG
+ERROR
+
+
+  // We can use LoggingSystem to set our loglevel at runtime:
+      /*
+      Allows for changing the logging levels of specific loggers at runtime,
+       which is particularly useful for debugging production issues without restarting the application.
+
+       loggingSystem.setLogLevel("com.example.service", LogLevel.TRACE);
+       */
+
+

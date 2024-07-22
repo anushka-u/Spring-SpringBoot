@@ -48,7 +48,7 @@ public class Application {
 	    // userRepository.deleteAll();
 		
 //		Optional<User> optional = userRepository.findById(502);
-//		User user = optional.get();
+//		User user = optional.get();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 //		user.setName("Ankit");
 //		
 //		User resultUser = userRepository.save(user);
@@ -76,6 +76,10 @@ public class Application {
 		
 
 		System.out.println(userRepository.findByNameAndCity("priya", "delhi"));
+		
+		
+		List<User> list = userRepository.getAllUser();
+		list.forEach(user->System.out.println(user));
 		
 		
 	}
